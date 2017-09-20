@@ -1,0 +1,9 @@
+<h1>Cartas#index</h1>
+<p>Find me in app/views/cartas/index.html.erb</p>
+
+<img src="<%= @card.first.image_url %>" alt="">
+<ul>
+<% @card.each do |card| %>
+	<li><%= card.multiverse_id %></li>	
+<% end %>
+</ul>
