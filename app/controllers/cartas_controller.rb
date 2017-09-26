@@ -1,8 +1,19 @@
 class CartasController < ApplicationController
+	
 	require 'mtg_sdk'
-  def index
-  	@cards = MTG::Card.where(page: 2).where(pageSize: 100).all
-  end
+	require 'net/http'
+ 
+	def index
+		@cartas = MTG::Card.where(name: params[:searchbox]).all
+	end
+
+  	def self.search(search)
+  		if search
+  			where('card LIKE ?',"%{search}%")
+  		else
+  			scoped
+  		end
+  	end
 
   def details
   	@card = MTG::Card.find(params[:id])
