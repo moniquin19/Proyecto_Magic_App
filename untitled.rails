@@ -1,0 +1,8 @@
+<%= form_tag 'search'
+
+<img src="<%= @cards.first.multiverse_id %>" alt="">
+ <ul>
+<% @cards.uniq {|c| c.name }.each do |element| %>
+	<%= link_to image_tag(element.image_url), card_details_path(element.id)  %>
+<% end %>
+</ul>

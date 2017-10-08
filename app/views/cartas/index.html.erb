@@ -1,10 +1,12 @@
 <h1>MTG Card Sales</h1>
 <ul>
-	<% @cartas.each do |carta| %>
-		<li>
-			<%= carta.name %>
-			<br>
-			<%= image_tag carta.image_url %>
-		</li>
+	<% if @cartas.present? %>
+		<% @cartas.each do |carta| %>
+			<li>
+				<%= carta.name %>
+				<br>
+				<%= image_tag carta.image_url %>
+			</li>
+		<% end %>
 	<% end %>
 </ul>

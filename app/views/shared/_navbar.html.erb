@@ -21,9 +21,9 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li class="active"><a href="#">MTG Cards Sales<span class="sr-only">(current)</span></a></li>
-        <li><a href="#">Cartas</a></li>
+        <li><a href="cartas">Cartas</a></li>
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Nuestros Productos<span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="#">Action</a></li>
             <li><a href="#">Another action</a></li>
@@ -39,16 +39,15 @@
         <div class="form-group">
           <%= text_field_tag "searchbox",params[:searchbox],class: "form-control", placeholder:"Ingresa tu busqueda"%>
         </div>
-        <%= submit_tag "Buscar", class:"btn btn-default", :name => nil %>  
+        <%= submit_tag "Buscar", class:"btn btn-default", :name => nil %> 
+        <%= submit_tag "Busqueda Avanzada", class:"btn btn-default", :name => nil %> 
       <%end%>
-      <div class="form-group">
-      <li><a href="#">Busqueda Avanzada</a></li>
-      </div>
+      
       <ul class="nav navbar-nav navbar-right">
         
         <li><a href="#">Link</a></li>
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Inicio Sesion <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <%unless user_signed_in? %>
              <li><a href=" <%= new_user_session_path %>">Ingresar</a></li>
